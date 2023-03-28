@@ -1,0 +1,7 @@
+fpdf
+tkmacosx
+tk
+glob2
+datetime
+
+
