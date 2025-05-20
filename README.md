@@ -28,6 +28,7 @@
 
 - Python 3.11
 - `pip`
+- `make`
 
 ### 🔧 Installation des dépendances
 
