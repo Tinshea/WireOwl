@@ -1,6 +1,19 @@
+OS := $(shell uname | tr '[:upper:]' '[:lower:]')
+IS_WINDOWS := $(findstring mingw,$(OS))
+
+ifeq ($(IS_WINDOWS),mingw)
+ACTIVATE = .venv/Scripts/activate
+PYTHON = python
+else
+ACTIVATE = .venv/bin/activate
+PYTHON = python3
+endif
+
 run:
-	. .venv/bin/activate && python3 core/main.py
+	. $(ACTIVATE) && $(PYTHON) core/main.py
+
 setup:
-	python3 -m venv .venv && . .venv/bin/activate && pip install -r Tools/requirements.txt 
+	$(PYTHON) -m venv .venv && . $(ACTIVATE) && pip install -r Tools/requirements.txt
+
 clean:
-	rm  -rf core/__pycache__ 
+	rm -rf core/__pycache__
