@@ -30,6 +30,7 @@ def is_hex(s):
         return False
 
 def traitement(fichier):
+    os.makedirs("./Trames", exist_ok=True)
     files=os.listdir("./Trames")
     for i in range(len(files)):
         os.remove("./Trames"+'/'+files[i])
