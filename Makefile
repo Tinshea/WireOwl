@@ -1,6 +1,6 @@
 run:
-	python3 core/main.py
+	. .venv/bin/activate && python3 core/main.py
 setup:
-	pip install -r Tools/requirements.txt
+	python3 -m venv .venv && . .venv/bin/activate && pip install -r Tools/requirements.txt 
 clean:
 	rm  -rf core/__pycache__ 
